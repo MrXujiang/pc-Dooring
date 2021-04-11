@@ -1,0 +1,116 @@
+.header {
+    position: relative;
+    z-index: 210;
+    padding: 10px 30px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    .logoArea {
+      width: 300px;
+      .backBtn {
+        display: inline-block;
+        padding: 12px 10px;
+        margin-right: 22px;
+        cursor: pointer;
+      }
+      .logo {
+        display: inline-block;
+        width: 120px;
+        overflow: hidden;
+        border-radius: 3px;
+        vertical-align: middle;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .controlArea {
+      flex: 1;
+      text-align: center;
+      
+    }
+    .btnArea {
+      width: 250px;
+      text-align: right;
+    }
+  }
+
+.saveForm {
+  padding-top: 10px;
+  .formIpt {
+    margin-bottom: 22px;
+    &>span {
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    img {
+      max-height: 252px;
+      object-fit: contain;
+      border: 1px solid #ccc;
+    }
+    &.imgWrap {
+      text-align: center;
+    }
+  }
+}
+.userWrap {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  .user {
+    margin-right: 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: #2F54EB;
+  }
+}
+
+.userList {
+  width: 120px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,.2);
+  .userItem {
+    font-size: 14px;
+    line-height: 2.4em;
+    cursor: pointer;
+    &:hover {
+      color: #2F54EB;
+    }
+  }
+}
+
+.pageConfig {
+  width: 300px;
+  .formControl {
+    position: relative;
+    padding-bottom: 10px;
+    display: flex;
+    .label {
+      display: inline-block;
+      flex-shrink: 0;
+      width: 76px !important;
+    }
+  }
+}
+
+.saveWrap {
+  width: 360px;
+  .label {
+    padding-top: 12px;
+    display: inline-block;
+  }
+}

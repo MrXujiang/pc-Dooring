@@ -1,0 +1,41 @@
+.tplWrap {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 520px;
+    overflow: auto;
+    .tpl {
+        position: relative;
+        box-sizing: border-box;
+        width: 210px;
+        height: 240px;
+        overflow: hidden;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #f0f0f0;
+        cursor: pointer;
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+        &:hover {
+            img {
+                transform: translateY(-30%);
+                opacity: .7;
+                transition: transform 1s;
+            }
+            .btn {
+                display: block;
+            }
+        }
+        img {
+            width: 100%;
+            transition: transform 1s;
+        }
+        .btn {
+            position: absolute;
+            display: none;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
