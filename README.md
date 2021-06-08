@@ -65,6 +65,23 @@ cnpm run dev
 ```
 前提是先安装http-server模块.
 
+## 本地服务器部署
+1. 打包
+```sh
+yarn build
+```
+2. 启动服务
+```sh
+node server.js
+# 或者pm2(需要先全局安装pm2)
+pm2 start server.js
+```
+3. 访问地址
+```sh
+服务器ip + 3000 (默认为3000, 也可以改成80, 具体参考server.js)
+```
+
+
 ## 更新日志 | Update the log
 1. 添加数据可视化模块
 2. 添加表单设计器模块

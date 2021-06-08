@@ -57,7 +57,12 @@
     "xlsx": "^0.16.7",
     "yh-react-popover": "^0.3.0",
     "yorkie": "^2.0.0",
-    "zarm": "^2.5.1"
+    "zarm": "^2.5.1",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-logger": "^3.2.1",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",

@@ -6,7 +6,7 @@ export default defineConfig({
     loading: '@/components/LoadingCp',
   },
   dva: {
-    immer: true
+    immer: true,
   },
   antd: {},
   sass: {
@@ -16,16 +16,16 @@ export default defineConfig({
   externals: {
     // react: 'window.React',
     // 'react-dom': 'window.ReactDom',
-    axios: 'window.axios'
+    axios: 'window.axios',
   },
   scripts: [
     // 'http://io.nainor.com/cdn/react.min.js',
     // 'http://io.nainor.com/cdn/reactDom.min.js',
-    'http://h5.dooring.cn/cdn/axios.min.js'
+    'http://h5.dooring.cn/cdn/axios.min.js',
   ],
   base: '/pc_plus/',
   publicPath: '/pc_plus/',
-  outputPath: '../server/static/pc_plus',
+  outputPath: './dist/pc_plus',
   routes: [
     {
       exact: false,
@@ -34,7 +34,7 @@ export default defineConfig({
       routes: [
         {
           path: '/',
-          redirect: '/editor'
+          redirect: '/editor',
         },
         {
           path: '/editor',
@@ -51,12 +51,12 @@ export default defineConfig({
         {
           path: '/preview',
           component: '../pages/editor/preview',
-        }
-      ]
-    }
+        },
+      ],
+    },
   ],
   theme: {
-    "primary-color": "#2F54EB",
+    'primary-color': '#2F54EB',
     // "btn-primary-bg": "#2F54EB"
   },
   // extraBabelPlugins: [
@@ -65,6 +65,6 @@ export default defineConfig({
   alias: {
     components: path.resolve(__dirname, 'src/components/'),
     utils: path.resolve(__dirname, 'src/utils/'),
-    assets: path.resolve(__dirname, 'src/assets/')
-  }
+    assets: path.resolve(__dirname, 'src/assets/'),
+  },
 });
