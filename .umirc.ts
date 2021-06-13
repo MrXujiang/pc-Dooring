@@ -14,15 +14,9 @@ export default defineConfig({
   },
   exportStatic: {},
   externals: {
-    // react: 'window.React',
-    // 'react-dom': 'window.ReactDom',
     axios: 'window.axios',
   },
-  scripts: [
-    // 'http://io.nainor.com/cdn/react.min.js',
-    // 'http://io.nainor.com/cdn/reactDom.min.js',
-    'http://h5.dooring.cn/cdn/axios.min.js',
-  ],
+  scripts: ['http://h5.dooring.cn/cdn/axios.min.js'],
   base: '/pc_plus/',
   publicPath: '/pc_plus/',
   outputPath: './dist/pc_plus',

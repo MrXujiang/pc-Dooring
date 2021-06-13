@@ -3,7 +3,9 @@ import { RGBColor } from 'react-color';
 
 // 生成uuid
 function uuid(len: number, radix: number) {
-  let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(
+    '',
+  );
   let uuid = [],
     i;
   radix = radix || chars.length;
@@ -81,11 +83,12 @@ export function useAnimation(state: boolean, delay: number) {
 }
 
 export function unParams(params = '?a=1&b=2&c=3') {
-  let obj:any = {}
-  params && params.replace(/((\w*)=([\.a-z0-9A-Z]*)?)?/g, (m,a,b,c):any => {
-    if(b || c) obj[b] = c
-  })
-  return obj
+  let obj: any = {};
+  params &&
+    params.replace(/((\w*)=([\.a-z0-9A-Z]*)?)?/g, (m, a, b, c): any => {
+      if (b || c) obj[b] = c;
+    });
+  return obj;
 }
 
 export function throttle(fn: Function, delay: number) {
@@ -101,28 +104,40 @@ export function throttle(fn: Function, delay: number) {
   };
 }
 
-export function formatTime(fmt:string, dateObj:any) {
+export function formatTime(fmt: string, dateObj: any) {
   const date = dateObj || new Date();
-  const o:any = { 
-    "M+" : date.getMonth()+1,                 //月份 
-    "d+" : date.getDate(),                    //日 
-    "h+" : date.getHours(),                   //小时 
-    "m+" : date.getMinutes(),                 //分 
-    "s+" : date.getSeconds(),                 //秒 
-    "q+" : Math.floor((date.getMonth()+3)/3), //季度 
-    "S"  : date.getMilliseconds()             //毫秒 
-  }; 
-  if(/(y+)/.test(fmt)) {
-    fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+  const o: any = {
+    'M+': date.getMonth() + 1, //月份
+    'd+': date.getDate(), //日
+    'h+': date.getHours(), //小时
+    'm+': date.getMinutes(), //分
+    's+': date.getSeconds(), //秒
+    'q+': Math.floor((date.getMonth() + 3) / 3), //季度
+    S: date.getMilliseconds(), //毫秒
+  };
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(
+      RegExp.$1,
+      (date.getFullYear() + '').substr(4 - RegExp.$1.length),
+    );
   }
-  for(var k in o) {
-      if(new RegExp("("+ k +")").test(fmt)){
-          fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
-      }
+  for (var k in o) {
+    if (new RegExp('(' + k + ')').test(fmt)) {
+      fmt = fmt.replace(
+        RegExp.$1,
+        RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length),
+      );
+    }
   }
-  return fmt; 
+  return fmt;
 }
 
 export const isDev = process.env.NODE_ENV === 'development';
 
-export const serverUrl = isDev ? 'http://localhost:3000' : 'http://h5.dooring.cn';
+export const serverUrl = isDev
+  ? 'http://localhost:3000'
+  : 'http://h5.dooring.cn';
+
+export const _gaw = (w: number) => {
+  return (window.innerWidth / 1024) * w;
+};
